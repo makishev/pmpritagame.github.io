@@ -2,106 +2,209 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124433208-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-124433208-3');
-    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124433208-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Игровой процесс Риты</title>
-    
-    <link href="css/simple-grid.min.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+	  gtag('config', 'UA-124433208-3');
+	</script>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Игра по процессам Риты</title>
+	<link href="css/simple-grid.min.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <h1 align="center">Игровой процесс Риты
-        <sup style="font-size:8px;"> v2.0</sup>
-        <br />
-        <span>
-            Основано на книге Риты Малкахи "Подготовка к экзамену PMP"
-            <b>Девятое</b> издание
-        </span>
-    </h1>
 
-    <div class="row header">
-        <hr />
-        <small>
-            <a id="hide" href="#">Скрыть</a>
-            <strong>Как играть?</strong> Просто перетащите любой элемент из «перемешанного» списка и поместите его под соответствующим заголовком. После того, как вы закончите, проверьте свой результат.
-            <br />
-            <strong>Загрузить:</strong> 
-            <a href="rita_proccess_game.zip">нажмите здесь</a>, чтобы загрузить игру. Распакуйте ее на своем компьютере и откройте 'index.htm'.
-            <br />
-        </small>
+	<!-- GITHUB CORNER -->
+	<a href="https://github.com/shoshins/rita-puzzle" class="github-corner" aria-label="View source on GitHub">
+		<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+			<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+			<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+			<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+		</svg>
+	</a>
+	<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!-- GITHUB CORNER -->
 
-        &raquo; <a href="index.html" id="new">Начать новую игру</a> 
-        &raquo; <a href="#" id="shu">Перемешать</a> 
-        &raquo; <a href="#" id="planning">Проверить порядок процессов группы "Планирование"</a>
-        &raquo; <a href="#" id="result">Показать результаты</a>
-        <hr />
-    </div>
+	<h1 align="center">&nbsp;&nbsp;Игра по процессам Риты
+		<sup style="font-size:8px;"> v2.0</sup>
+		<br />
+		<span>
+			На основе книги Риты Мулкахи "Подготовка к экзамену PMP"
+			<b>Девятое</b> издание
+		</span>
+	</h1>
 
-    <div id="masterList" class="container">
-        <div class="row">
-            <div id="mixed" class="pane col-2">
-                <span class="containerTitle">Перемешанный список</span>
-                <ul id="0">
-                    <li id="1" value="101">Выбрать менеджера проекта</li>
-                    <li id="1" value="102">Определить культуру компании и существующие системы</li>
-                    <li id="1" value="103">Собрать процессы, процедуры и историческую информацию</li>
-                    <li id="1" value="104">Разделить большие проекты на фазы или меньшие проекты</li>
-                    <li id="1" value="105">Понять бизнес-план и план управления выгодами</li>
-                    <li id="1" value="106">Раскрыть начальные требования, предположения, риски, ограничения и существующие соглашения</li>
-                    <li id="1" value="107">Оценить осуществимость проекта и продукта в рамках заданных ограничений</li>
-                    <li id="1" value="108">Создать измеримые цели и критерии успеха</li>
-                    <li id="1" value="109">Разработать устав проекта</li>
-                    <li id="1" value="110">Идентифицировать заинтересованные стороны и определить их ожидания, интересы, влияние и воздействие</li>
-                </ul>
-            </div>
+	<div class="row header">
+		<hr />
+		<small>
+			<a id="hide" href="#">Скрыть</a>
+			<strong>Как играть?</strong> Просто перетащите любой элемент из «перемешанного» списка и поместите его под соответствующим заголовком. После того, как вы закончите, проверьте свой результат. Для достижения наилучших результатов используйте любой браузер, кроме Internet Explorer.
+			<br />
+			<strong>Загрузить:</strong> Пожалуйста
+			<a href="rita_proccess_game.zip">нажмите здесь</a> чтобы загрузить эту игру. Распакуйте ее где удобно на компьютере и откройте 'index.htm'.
+			<br />
+		</small>
 
-            <div class="pane col-2">
-                <span class="containerTitle">Инициация</span>
-                <ul id="1"><li class="unmovable"></li></ul>
-            </div>
+		&raquo;
+		<a href="index.html" id="new">Начать новую игру</a> &raquo;
+		<a href="#" id="shu">Перемешать</a> &raquo;
+		<a href="#" id="planning">Проверить порядок процессов группы "Планирование"</a>
+		<span>&raquo;</span>
+		<a href="#" id="result">Показать результаты</a>
+		<hr />
+	</div>
+	<div id="masterList"  class="container">
+		<div class="row">
 
-            <div class="pane col-2">
-                <span class="containerTitle">Планирование</span>
-                <ul id="2" class="planning"><li class="unmovable"></li></ul>
-            </div>
+		<div id="mixed" class="pane col-2">
+			<span class="containerTitle">Перемешанный список</span>
+			<ul id="0">
+				<li id="1" value="101">Выбрать менеджера проекта</li>
+				<li id="1" value="102">Определить культуру компании и существующие системы</li>
+				<li id="1" value="103">Собрать процессы, процедуры и историческую информацию</li>
+				<li id="1" value="104">Разделить большие проекты на фазы или меньшие проекты</li>
+				<li id="1" value="105">Понять бизнес-план и план управления выгодами</li>
+				<li id="1" value="106">Раскрыть начальные требования, предположения, риски, ограничения и существующие соглашения</li>
+				<li id="1" value="107">Оценить осуществимость проекта и продукта в рамках заданных ограничений</li>
+				<li id="1" value="108">Создать измеримые цели и критерии успеха</li>
+				<li id="1" value="109">Разработать устав проекта</li>
+				<li id="1" value="110">Идентифицировать заинтересованные стороны и определить их ожидания, интересы, влияние и воздействие</li>
+				<li id="1" value="111">Создать запрос на изменения (1)</li>
+				<li id="1" value="112">Создать журнал допущений</li>
+				<li id="1" value="113">Создать реестр заинтересованных сторон</li>
 
-            <div class="pane col-3">
-                <span class="containerTitle">Исполнение</span>
-                <ul id="3"><li class="unmovable"></li></ul>
-            </div>
+				<li id="2" value="201">Определить подход к разработке, жизненный цикл и то, как каждая область знаний будет спланирована</li>
+				<li id="2" value="202">Определить и приоритизировать требования</li>
+				<li id="2" value="203">Создать описание содержания проекта</li>
+				<li id="2" value="204">Оценить, что потребуется закупить и создать документы по закупкам</li>
+				<li id="2" value="205">Определить команду планирования</li>
+				<li id="2" value="206">Создать ИСР и словарь ИСР</li>
+				<li id="2" value="207">Создать список операций</li>
+				<li id="2" value="208">Создать диаграмму сети расписания проекта</li>
+				<li id="2" value="209">Оценить требования к ресурсам</li>
+				<li id="2" value="210">Оценить длительность операций и их стоимость</li>
+				<li id="2" value="211">Определить критический путь</li>
+				<li id="2" value="212">Разработать расписание</li>
+				<li id="2" value="213">Разработать бюджет</li>
+				<li id="2" value="214">Определить стандарты качества, процессы и показатели</li>
+				<li id="2" value="215">Определить устав команды, все роли и обязанности</li>
+				<li id="2" value="216">Спланировать коммуникации и вовлечение заинтересованных сторон</li>
+				<li id="2" value="217">Выполнить идентификацию рисков, качественный и количественный анализ рисков и спланировать реагирование на риски</li>
+				<li id="2" value="218">Вернуться назад - итерации</li>
+				<li id="2" value="219">Завершить стратегию закупок и документы по закупкам</li>
+				<li id="2" value="220">Создать план управления изменениями и конфигурацией</li>
+				<li id="2" value="221">Завершить создание всех планов управления проектом</li>
+				<li id="2" value="222">Разработать реалистичный и достаточный план управления проектом и базовые планы</li>
+				<li id="2" value="223">Получить официальное одобрение плана</li>
+				<li id="2" value="224">Провести стартовое совещание проекта</li>
+				<li id="2" value="225">Создать запрос на изменения (2)</li>
 
-            <div class="pane col-2">
-                <span class="containerTitle">Мониторинг и контроль</span>
-                <ul id="4"><li class="unmovable"></li></ul>
-            </div>
+				<li id="3" value="301">Выполнить работу в соответствии с планом управления проектом</li>
+				<li id="3" value="302">Производить поставляемые результаты (содержание продукта)</li>
+				<li id="3" value="303">Собрать данные об исполнении</li>
+				<li id="3" value="304">Создать запрос на изменения (3)</li>
+				<li id="3" value="305">Реализовать только ободренные изменения</li>
+				<li id="3" value="306">Постоянно улучшать, выполнять последовательное уточнение</li>
+				<li id="3" value="307">Следовать процессам</li>
+				<li id="3" value="308">Определить, являются ли план и процессы качества правильными и эффективными</li>
+				<li id="3" value="309">Провести аудит качества и создать отчет о качестве</li>
+				<li id="3" value="310">Получить финальную команду и физические ресурсы</li>
+				<li id="3" value="311">Управлять людьми</li>
+				<li id="3" value="312">Оценить командное и индивидуальное исполнение, обеспечить обучение</li>
+				<li id="3" value="313">Проводить мероприятия по укреплению команды</li>
+				<li id="3" value="314">Показать признание и вознаграждать</li>
+				<li id="3" value="315">Использовать журнал проблем</li>
+				<li id="3" value="316">Способствовать разрешению конфликтов</li>
+				<li id="3" value="317">По завершению работы освободить ресурсы</li>
+				<li id="3" value="318">Отправлять и получать информацию и запрашивать отзывы</li>
+				<li id="3" value="319">Докладывать об исполнении проекта</li>
+				<li id="3" value="320">Способствовать вовлечению заинтересованных сторон и управлять ожиданиями</li>
+				<li id="3" value="321">Проводить совещания</li>
+				<li id="3" value="322">Оценивать продавцов, проводить переговоры и заключать договоры с продавцами</li>
+				<li id="3" value="323">Использовать и делиться знаниями проекта</li>
+				<li id="3" value="324">Исполнять планы возможных потерь</li>
+				<li id="3" value="325">Обновлять плана управления проектом и проектной документации</li>
 
-            <div class="pane col-2">
-                <span class="containerTitle">Закрытие</span>
-                <ul id="5"><li class="unmovable"></li></ul>
-            </div>
-        </div>
-    </div>
+				<li id="4" value="401">Принять меры для мониторинга и контроля проекта</li>
+				<li id="4" value="402">Измерение исполнения по сравнению с базовым планом</li>
+				<li id="4" value="403">Измерение исполнения по сравнению с другими показателями в плане управления проектом</li>
+				<li id="4" value="404">Анализировать и оценивать данные и производительность</li>
+				<li id="4" value="405">Определите, требуют ли отклонения корректирующих действий или других запросов на изменения</li>
+				<li id="4" value="406">Влиять на факторы, которые вызывают изменения</li>
+				<li id="4" value="407">Создать запрос на изменения (4)</li>
+				<li id="4" value="408">Выполнить интегрированный контроль изменений</li>
+				<li id="4" value="409">Утвердить или отклонить изменения</li>
+				<li id="4" value="410">Обновление плана управления проектом и проектной документации</li>
+				<li id="4" value="411">Информировать заинтересованные стороны обо всех результатах запроса на изменение</li>
+				<li id="4" value="412">Мониторинг вовлечения заинтересованных сторон</li>
+				<li id="4" value="413">Подтвердите соответствие конфигурации</li>
+				<li id="4" value="414">Создавайте прогнозы</li>
+				<li id="4" value="415">Получите одобрение клиента на принятие промежуточных результатов</li>
+				<li id="4" value="416">Выполнить контроль качества</li>
+				<li id="4" value="417">Провести анализ рисков, переоценку и аудит</li>
+				<li id="4" value="418">Управление резервами</li>
+				<li id="4" value="419">Управлять, оценивать и закрывать закупки</li>
+				<li id="4" value="420">Оценить использование физических ресурсов</li>
+
+				<li id="5" value="501">Подтвердите, что выполненная работа соответствует требованиям</li>
+				<li id="5" value="502">Окончательное закрытие закупок</li>
+				<li id="5" value="503">Получить окончательное принятие продукта</li>
+				<li id="5" value="504">Провести полное финансовое закрытие</li>
+				<li id="5" value="505">Передача готового проекта (конечного продукта)</li>
+				<li id="5" value="506">Соберите отзывы клиентов о проекте</li>
+				<li id="5" value="507">Завершите финальный отчет по исполнению</li>
+				<li id="5" value="508">Проиндексируйте и заархивируйте записи</li>
+				<li id="5" value="509">Соберите окончательные извлеченные уроки и обновите базы знаний</li>
+			</ul>
+		</div>
+
+		<div class="pane col-2">
+			<span class="containerTitle">Инициация</span>
+			<ul id="1">
+				<li class="unmovable"></li>
+			</ul>
+		</div>
+
+		<div class="pane col-2">
+			<span class="containerTitle">Планирование</span>
+			<ul id="2" class="planning">
+				<li class="unmovable"></li>
+			</ul>
+		</div>
+
+		<div class="pane col-3">
+			<span class="containerTitle">Исполнение</span>
+			<ul id="3">
+				<li class="unmovable"></li>
+			</ul>
+		</div>
+
+		<div class="pane col-2">
+			<span class="containerTitle">Мониторинг и контроль</span>
+			<ul id="4">
+				<li class="unmovable"></li>
+			</ul>
+		</div>
+
+		<div class="pane col-2">
+			<span class="containerTitle">Закрытие</span>
+			<ul id="5">
+				<li class="unmovable"></li>
+			</ul>
+		</div>
+	</div>
+</div>
 </body>
-
 <script type="text/javascript" src="js/jquery-1.2.1.js"></script>
 <script type="text/javascript" src="js/ui.sortable.js"></script>
 <script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script src="https://unpkg.com/translater.js/dist/translater.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/logic.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Set default language to Russian
-        localStorage.setItem("language", "ru");
-    });
-</script>
-
 </html>
